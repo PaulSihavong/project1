@@ -4,6 +4,6 @@ Project 1
 
 Group members:
 
-Ada Lovelace adalovelace@csu.fullerton.edu
+Paul Sihavong paul.sihavong@csu.fullerton.edu
 
-Charles Babbage charlesbab@csu.fullerton.edu
+Paul Kem pkem@csu.fullerton.edu
