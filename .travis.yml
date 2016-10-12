@@ -5,4 +5,4 @@ addons:
         packages:
         - python3
 install: true
-script: ./critic build
+script: ./critic test
