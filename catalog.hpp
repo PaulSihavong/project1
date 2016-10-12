@@ -1,5 +1,4 @@
 
-/
 // catalog.hpp
 // CSUF CPSC 131, Fall 2016, Project 1
 //
@@ -10,7 +9,7 @@
 #include <stdexcept>
 #include <string>
 
-using namespace std;
+//using namespace std;
 
 // A product represents one particular kind of product, such as apples
 // or cereal.
@@ -24,7 +23,8 @@ public:
 	// name may be any string.
 	//
 	// price is in units of dollars. It must be positive, or else this
-	// function throws std::invalid_argument.
+	// function throws std::invalid_argument.	
+	Product() {};
 	Product(const std::string& code,
 		const std::string& name,
 		double price) {
@@ -33,6 +33,8 @@ public:
 		// 10/8/16
 		if (price < 0)
 			throw std::invalid_argument("price cannot be negative");
+		
+
 	}
 
 	~Product() { }
@@ -64,7 +66,7 @@ public:
 		if (maxProducts < 0)
 			throw std::invalid_argument("max cannot be negative");
 		maxP = maxProducts;
-		ptr = new int[maxP];
+		ptr = new Product[maxP];
 	}
 
 	~Catalog() {
@@ -113,7 +115,7 @@ public:
 		double price) {
 		// TODO: implement this function properly
 		// 10/8/16
-    numP++;
+		numP++;
 		if (numP > maxP)
 			throw std::overflow_error("reached maximum products");
 		throw std::logic_error("not implemented yet");
@@ -136,7 +138,7 @@ public:
 		// TODO: implement this function properly
 		throw std::logic_error("not implemented yet");
 		// 10/8/16
-		for (int i = 0; i < maxP; i++) {
+		for (int i = 0; i < numP; i++) {
 			if (code == ptr[i].getCode())
 				return ptr[i];
 			else
@@ -151,4 +153,3 @@ private:
 	int numP; // current amount of product
 	Product * ptr; 
 };
-
